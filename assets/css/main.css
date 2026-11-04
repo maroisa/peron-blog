@@ -62,7 +62,7 @@
     }
 
     code {
-        @apply pr-4 text-lg;
+        @apply pr-4 text-base md:text-lg;
     }
 }
 
