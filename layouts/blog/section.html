@@ -1,0 +1,24 @@
+{{ define "title" }}{{ .Title }} {{ end }} {{ define "main" }}
+<h2 class="text-center">{{ .Title }}</h2>
+
+{{ with .Pages }}
+<div class="grid grid-cols-1 md:grid-cols-2">
+    {{ range . }}
+    <a
+        href="{{ .Permalink }}"
+        class="card bg-base-200 shadow-md rounded-md border border-base-content/10 hover:border-base-content/25 hover:scale-102 hover:text-blue-100 transition-all"
+    >
+        <figure>
+            <img class="aspect-video" src="/cover.webp" />
+        </figure>
+        <div class="card-body text-left p-4 *:p-0">
+            <h3 class="card-title">{{ .Title }}</h3>
+            <p>{{ .Summary }}</p>
+            <p class="text-blue-200 text-center py-2">Lihat selengkapnya</p>
+        </div>
+    </a>
+    {{ end }}
+</div>
+{{ else }}
+<p class="text-center italic text-lg">Belum ada halaman.</p>
+{{ end }} {{ end }}

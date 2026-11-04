@@ -1,0 +1,21 @@
+{{ define "title" }}{{ .Title }} {{ end }} {{ define "main" }}
+<h2 class="text-center">{{ .Title }}</h2>
+
+{{ with .Pages }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    {{ range . }}
+    <a href="{{ .Permalink }}" class="card">
+        <div class="card-body text-left p-4 *:p-0 gap-2">
+            <div class="*:p-0">
+                <h3 class="card-title">{{ .Title }}</h3>
+                {{ if .Params.karya }}
+                <p class="italic">Karya: {{ .Params.karya }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </a>
+    {{ end }}
+</div>
+{{ else }}
+<p class="text-center italic text-lg">Belum ada halaman.</p>
+{{ end }} {{ end }}
