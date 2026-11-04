@@ -1,6 +1,5 @@
 ---
 title: Contact Person
-draft: true
 ---
 
 <div class="box">
